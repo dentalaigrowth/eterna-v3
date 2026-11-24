@@ -16,7 +16,7 @@ function bs(b){ return BS[b] || (D.brands[b] && D.brands[b].code) || String(b).r
 function sbOf(code){ if (SB[code] && D.brands[SB[code]]) return SB[code]; for (var i = 0; i < D.brandOrder.length; i++) if (bs(D.brandOrder[i]) === code) return D.brandOrder[i]; return null; }
 
 var T = {
- products:["Products","Produkte"], icons:["Icons","Ikona"], rooms:["Rooms","Ambiente"], designers:["Designers","Projektues"], about:["About us","Rreth nesh"], contact:["Contact","Kontakt"],
+ products:["Products","Produkte"], icons:["Icons","Ikonat"], rooms:["Rooms","Ambiente"], designers:["Designers","Projektues"], about:["About us","Rreth nesh"], contact:["Contact","Kontakt"],
  brands:["Brands","Marka"], furniture:["Furniture","Mobilie"], lighting:["Lighting","Ndriçim"], accessories:["Accessories","Aksesorë"], outdoor:["Outdoor","Ambiente të jashtme"],
  chairs:["Chairs","Karrige"], tables:["Tables","Tavolina"], sofas:["Sofas","Divanë"], armchairs:["Armchairs","Kolltukë"], shelving:["Shelving","Rafte"], storage:["Storage furniture","Mobilie sistemimi"], beds:["Beds","Shtretër"],
  pendant:["Pendant lights","Ndriçues të varur"], "table-lamp":["Table lamps","Llamba tavoline"], "floor-lamp":["Floor lamps","Llamba dyshemeje"], cordless:["Cordless lamps","Llamba pa kabllo"], "wall-lamp":["Wall lamps","Llamba muri"],
@@ -33,16 +33,19 @@ var T = {
  deliveryTxt:["Every piece is made to order by the manufacturer in the finish you choose. We confirm price, lead time and delivery to Albania in writing before you order.","Çdo pjesë prodhohet me porosi nga prodhuesi, në finiturën që zgjidhni. Çmimin, kohën e prodhimit dhe dorëzimin në Shqipëri jua konfirmojmë me shkrim para porosisë."],
  more:["More from this collection","Më shumë nga ky koleksion"], by:["by","nga"], designedBy:["Design","Dizajni"],
  heroH:["Timeless design, chosen by architects.","Dizajn i përjetshëm, i zgjedhur nga arkitektë."],
- heroP:["Eterna brings the icons of Fritz Hansen, Cassina and Exteta to Albania. By appointment in Tirana.","Eterna sjell në Shqipëri ikonat e Fritz Hansen, Cassina dhe Exteta. Me takim në Tiranë."],
+ heroP:["Eterna brings the icons of Fritz Hansen, Cassina, Knoll, Vitra, Flos and Exteta to Albania. By appointment in Tirana.","Eterna sjell në Shqipëri ikonat e Fritz Hansen, Cassina, Knoll, Vitra, Flos dhe Exteta. Me takim në Tiranë."],
  explore:["Explore products","Shiko produktet"], seeIcons:["See the icons","Shiko ikonat"],
  stH:["We do not follow trends. We choose pieces that time has already tested.","Nuk ndjekim trendet. Zgjedhim pjesë që koha i ka provuar tashmë."],
- threeHouses:["Three houses","Tre shtëpi"], byRoom:["By room","Sipas ambientit"], byCat:["By category","Sipas kategorisë"],
- iconsH:["The icons","Ikonat"], iconsP:["Twenty pieces that shaped how the world sits, rests and gathers. Each one made today by its original maker, and available through Eterna.","Njëzet pjesë që formësuan mënyrën si bota ulet, pushon dhe mblidhet. Secila prodhohet sot nga prodhuesi i saj origjinal dhe vjen përmes Eterna."],
- designersH:["The designers","Projektuesit"], designersP:["Every piece we bring to Albania carries a signature. These are the architects and designers behind the three houses.","Çdo pjesë që sjellim në Shqipëri mban një firmë. Këta janë arkitektët dhe projektuesit pas tre shtëpive."],
+ threeHouses:["The houses","Shtëpitë"], byRoom:["By room","Sipas ambientit"], byCat:["By category","Sipas kategorisë"],
+ iconsH:["The icons","Ikonat"], iconsP:["Some pieces outlive the moment they were designed for and become part of how we imagine a home. These are the icons Eterna brings to Albania: chairs, sofas, tables and lamps by the architects and designers who shaped modern living, chosen for rooms that deserve them.","Disa pjesë e tejkalojnë kohën për të cilën u projektuan dhe bëhen pjesë e mënyrës si e imagjinojmë një shtëpi. Këto janë ikonat që Eterna sjell në Shqipëri: karrige, divanë, tavolina dhe llamba nga arkitektët dhe projektuesit që i dhanë formë jetesës moderne, të zgjedhura për ambiente që i meritojnë."],
+ designersH:["The designers","Projektuesit"], designersP:["Every piece we bring to Albania carries a signature. Behind each chair, table and lamp is an architect or designer whose ideas shaped how the world lives. From the Danish masters who defined modern design at Fritz Hansen to the Italian architects reimagining outdoor living at Exteta, these are the names behind Eterna's collection, and the stories that make each piece worth keeping for generations.","Çdo pjesë që sjellim në Shqipëri mban një firmë. Pas çdo karrigeje, tavoline dhe llambe është një arkitekt ose projektues, idetë e të cilit formësuan mënyrën si jeton bota. Nga mjeshtrat danezë që përcaktuan dizajnin modern te Fritz Hansen te arkitektët italianë që po rishpikin jetesën në natyrë te Exteta, këta janë emrat pas koleksionit të Eterna dhe historitë që e bëjnë çdo pjesë të vlejë për t'u ruajtur me breza."],
+ azAll:["All","Të gjithë"],
+ brandCta:["Ask us about the {b} collection","Na pyesni për koleksionin {b}"], brandCtaP:["The full {b} catalogue is available to order through Eterna. Write to us and we send you the collections, finishes and prices.","I gjithë katalogu {b} porositet përmes Eterna. Na shkruani dhe ju dërgojmë koleksionet, finiturat dhe çmimet."], brandWa:["Hello Eterna, I would like information about {b}.","Përshëndetje Eterna, do të doja informacion për {b}."],
+ projectNote:["Knoll works with Eterna on architecture and interior projects. Write to us with your project.","Knoll punon me Eterna për projekte arkitekture dhe interieri. Na shkruani për projektin tuaj."],
  works:["Key works","Vepra kryesore"], year:["Year","Viti"], work:["Work","Vepra"], inCollection:["In the collection","Në koleksion"],
- roomsH:["Rooms","Ambiente"], roomsP:["Start from the space. Pieces from all three houses, grouped by the room they were made for.","Nisuni nga hapësira. Pjesë nga të tria shtëpitë, të grupuara sipas ambientit për të cilin janë bërë."],
- productsP:["The full catalogue of the three houses: more than six hundred pieces, each available to order through Eterna.","Katalogu i plotë i tre shtëpive: mbi gjashtëqind pjesë, secila e porositshme përmes Eterna."],
- brandsP:["Eterna represents three houses in Albania. Each one has a history worth knowing before you choose.","Eterna përfaqëson tri shtëpi në Shqipëri. Secila ka një histori që ia vlen ta njihni para se të zgjidhni."],
+ roomsH:["Rooms","Ambiente"], roomsP:["Start from the space. Pieces from every house, grouped by the room they were made for.","Nisuni nga hapësira. Pjesë nga të gjitha shtëpitë, të grupuara sipas ambientit për të cilin janë bërë."],
+ productsP:["The full catalogue: more than six hundred pieces, each available to order through Eterna.","Katalogu i plotë: mbi gjashtëqind pjesë, secila e porositshme përmes Eterna."],
+ brandsP:["The houses Eterna brings to Albania. Each one has a history worth knowing before you choose.","Shtëpitë që Eterna sjell në Shqipëri. Secila ka një histori që ia vlen ta njihni para se të zgjidhni."],
  history:["History","Historia"], readStory:["The house","Shtëpia"],
  ds:["Design services","Shërbime projektimi"], ph:["Philosophy","Filozofia"],
  aboutP:["Eterna was founded by architects. Two things define how we work: the way we think about objects, and the design service that comes with them.","Eterna u themelua nga arkitektë. Dy gjëra përcaktojnë mënyrën si punojmë: si i mendojmë objektet dhe shërbimi i projektimit që vjen me to."],
@@ -52,6 +55,20 @@ var T = {
  dsBody2:["The scope follows the products you choose. One armchair may need only a corner and a lamp. A living room, a terrace or a full residence gets a complete layout with finishes and lighting.","Shtrirja e punës varet nga produktet që zgjidhni. Një kolltuk mund të kërkojë vetëm një kënd dhe një llambë. Një dhomë ndenjeje, një tarracë ose një banesë e plotë merr një projekt të plotë me finitura dhe ndriçim."],
  dsS:[["Choose","Zgjidhni"],["Share the space","Na tregoni hapësirën"],["We design","Ne projektojmë"],["Order and delivery","Porosi dhe dorëzim"]],
  dsSt:[["Select the pieces you are drawn to, here or with us in Tirana.","Zgjidhni pjesët që ju tërheqin, këtu ose me ne në Tiranë."],["Send a plan, photos or measurements. We visit when the project needs it.","Dërgoni një planimetri, foto ose përmasa. Vijmë në vend kur projekti e kërkon."],["Layout, finishes and lighting for the room, drawn around the products you selected.","Planvendosje, finitura dhe ndriçim për ambientin, të vizatuara rreth produkteve që keni zgjedhur."],["We order from the manufacturer and follow the piece until it stands in your room.","Porosisim te prodhuesi dhe e ndjekim pjesën derisa të vendoset në ambientin tuaj."]],
+ dsHero:["Your space, composed with intention.","Hapësira juaj, e kompozuar me qëllim."],
+ dsSub:["A design service for homes, offices and hospitality spaces, from the first measurement to the final quotation. Our architects visit your space, measure it and study how you live and work in it. We then compose a complete proposal: a furnished plan, photorealistic 4K renderings with pieces from the collections we represent, and a transparent quotation. Before you commit to anything, you see the whole vision.","Një shërbim projektimi për shtëpi, zyra dhe hapësira mikpritjeje, nga matja e parë deri te oferta përfundimtare. Arkitektët tanë e vizitojnë hapësirën tuaj, e masin dhe studiojnë si jetoni e punoni në të. Pastaj përgatisim një propozim të plotë: planimetri me mobilim, renderime fotorealiste 4K me pjesë nga koleksionet që përfaqësojmë dhe një ofertë të qartë. Para se të angazhoheni për asgjë, e shihni të gjithë vizionin."],
+ dsBook:["Book a design consultation","Rezervoni një konsultë projektimi"], dsBookWa:["Hello Eterna, I would like to book a design consultation.","Përshëndetje Eterna, do të doja të rezervoja një konsultë projektimi."],
+ dsAppH:["Our approach","Qasja jonë"],
+ dsApp1:["Furniture by the world's great designers is never just furniture. A lounge chair by Arne Jacobsen or a sofa by Le Corbusier changes the atmosphere of a whole room. Placed well, it becomes the piece people remember.","Mobiliet e projektuesve të mëdhenj të botës nuk janë kurrë thjesht mobilie. Një kolltuk i Arne Jacobsen ose një divan i Le Corbusier ndryshon atmosferën e gjithë dhomës. I vendosur mirë, bëhet pjesa që njerëzit e mbajnë mend."],
+ dsApp2:["That is why we don't sell pieces in isolation. We study the space first and then propose what truly belongs in it. Every proposal is prepared by architects, with the same care we would give our own projects.","Prandaj nuk i shesim pjesët të shkëputura. Fillimisht studiojmë hapësirën dhe pastaj propozojmë atë që i takon vërtet. Çdo propozim përgatitet nga arkitektë, me të njëjtin kujdes që do t'u kushtonim projekteve tona."],
+ dsHowH:["How it works","Si funksionon"],
+ dsSteps:[["Consultation","Konsulta","We begin with a conversation about how you use the space, what you want to feel in it, your timeline and your budget. This can happen at your space or by appointment.","Nisim me një bisedë për mënyrën si e përdorni hapësirën, çfarë doni të ndjeni në të, afatet dhe buxhetin tuaj. Mund të bëhet në hapësirën tuaj ose me takim."],["Site survey & measurement","Rilevimi dhe matja","We visit and measure the space in detail: dimensions, openings, ceiling heights, natural light and circulation. Nothing in the proposal is approximate.","Vizitojmë dhe masim hapësirën në detaj: përmasat, hapjet, lartësitë e tavanit, dritën natyrale dhe qarkullimin. Asgjë në propozim nuk është e përafërt."],["Spatial analysis","Analiza e hapësirës","We study proportions, light and movement through the space, and how each area should function. This is where the design decisions are made.","Studiojmë përmasat, dritën dhe lëvizjen nëpër hapësirë, si dhe si duhet të funksionojë çdo zonë. Këtu merren vendimet e projektimit."],["Furnished plan","Planimetria me mobilim","You receive a scaled layout showing exactly where each piece sits, how it relates to the rest of the room and why it was chosen.","Merrni një planvendosje në shkallë që tregon saktësisht ku qëndron çdo pjesë, si lidhet me pjesën tjetër të dhomës dhe pse u zgjodh."],["4K photorealistic renderings","Renderime fotorealiste 4K","We render your own space, furnished with pieces from Fritz Hansen, Cassina, Knoll, Exteta, Flos, Fiam and Amura, in the materials, fabrics and finishes we recommend. You see the result before a single piece is ordered.","Renderojmë hapësirën tuaj, të mobiluar me pjesë nga Fritz Hansen, Cassina, Knoll, Exteta, Flos, Fiam dhe Amura, në materialet, stofrat dhe finiturat që rekomandojmë. E shihni rezultatin para se të porositet qoftë edhe një pjesë."],["Quotation preview & recommendations","Paraoferta dhe rekomandimet","Together with the renderings, you receive a quotation preview covering every proposed piece, with estimated delivery times. We also give our recommendations: which pieces anchor the space, where an alternative finish or model may suit you better, and how the project can be phased if you prefer to build it over time.","Bashkë me renderimet merrni një paraofertë për çdo pjesë të propozuar, me kohët e parashikuara të dorëzimit. Ju japim edhe rekomandimet tona: cilat pjesë e mbajnë hapësirën, ku një finiturë ose model tjetër mund t'ju shkojë më mirë dhe si mund të ndahet projekti në faza nëse preferoni ta ndërtoni me kohë."]],
+ dsRecvH:["What you receive","Çfarë merrni"],
+ dsRecv:[["Precise measured survey of your space","Rilevim i saktë i hapësirës suaj"],["Furnished floor plan","Planimetri me mobilim"],["4K photorealistic renderings from key viewpoints","Renderime fotorealiste 4K nga pikëpamjet kryesore"],["Material, fabric and finish selection","Përzgjedhje materialesh, stofrash dhe finiturash"],["Quotation preview with delivery estimates","Paraofertë me kohët e dorëzimit"],["Personal recommendations from our architects","Rekomandime personale nga arkitektët tanë"]],
+ dsSpaceH:["For every kind of space","Për çdo lloj hapësire"],
+ dsSpaces:[["Homes","Shtëpi","Living rooms, dining spaces, bedrooms and outdoor terraces, composed around the way you live.","Dhoma ndenjeje, hapësira ngrënieje, dhoma gjumi dhe tarraca, të kompozuara rreth mënyrës si jetoni."],["Offices","Zyra","Workspaces, meeting rooms and receptions that express who you are before you say a word.","Hapësira pune, salla mbledhjesh dhe recepsione që tregojnë kush jeni para se të thoni një fjalë."],["Hospitality & projects","Mikpritje dhe projekte","Hotels, restaurants, bars and residential complexes, specified with contract-grade pieces and project timelines.","Hotele, restorante, bare dhe komplekse banimi, me pjesë të nivelit kontraktual dhe afate projekti."]],
+ dsEndH:["Let's begin with your space.","Le të nisim me hapësirën tuaj."], dsEndP:["Book a consultation and we will arrange a visit at a time that suits you.","Rezervoni një konsultë dhe ne caktojmë një vizitë në kohën që ju përshtatet."],
+ dsBook2:["Book a consultation","Rezervoni një konsultë"], dsWaBtn:["Write to us on WhatsApp","Na shkruani në WhatsApp"], apptOnly:["By appointment only","Vetëm me takim"],
  dsCta:["Start your project","Nisni projektin tuaj"], dsWa:["Hello Eterna, I would like to use your Complimentary Design Services.","Përshëndetje Eterna, do të doja të përdorja Shërbimet tuaja të Projektimit pa Pagesë."],
  phK:["Get to know us","Na njihni"], phH:["The quiet longing for timeless design.","Dëshira e qetë për dizajn të përjetshëm."],
  contactH:["Write to us","Na shkruani"], contactP:["Eterna works by appointment in Tirana. The fastest way to reach us is WhatsApp.","Eterna punon me takim në Tiranë. Mënyra më e shpejtë për të na kontaktuar është WhatsApp."],
@@ -59,7 +76,7 @@ var T = {
  phone:["Phone","Telefon"], email:["Email","Email"], showroom:["Showroom","Showroom"], appt:["Tirana, by appointment","Tiranë, me takim"],
  waDef:["Hello Eterna, I would like some information.","Përshëndetje Eterna, do të doja disa informacione."],
  waProd:["Hello Eterna, I would like a quote for: ","Përshëndetje Eterna, do të doja një ofertë për: "], waOrder:["Hello Eterna, I would like to order: ","Përshëndetje Eterna, do të doja të porosis: "], waAvail:["Hello Eterna, is this piece available: ","Përshëndetje Eterna, a është e disponueshme kjo pjesë: "],
- notFound:["Page not found","Faqja nuk u gjet"], footTag:["Timeless design. Fritz Hansen, Cassina and Exteta in Albania.","Dizajn i përjetshëm. Fritz Hansen, Cassina dhe Exteta në Shqipëri."],
+ notFound:["Page not found","Faqja nuk u gjet"], footTag:["Timeless design. The great houses of modern furniture and light, in Albania.","Dizajn i përjetshëm. Shtëpitë e mëdha të mobilieve dhe ndriçimit modern, në Shqipëri."],
  drawing:["Technical drawing","Vizatim teknik"], menu:["Menu","Menu"], close:["Close","Mbyll"], zoom:["Enlarge","Zmadho"],
  generic:["Made to order by {b}. Finishes, dimensions and price on request.","Prodhohet me porosi nga {b}. Finiturat, përmasat dhe çmimi me kërkesë."]
 };
@@ -81,6 +98,7 @@ function prep(){
   D = window.ETERNA;
   D.brands = D.brands || {}; D.designers = D.designers || {}; D.icons = D.icons || []; D.products = D.products || [];
   if (!D.brandOrder || !D.brandOrder.length) D.brandOrder = Object.keys(D.brands);
+  if (window.ETERNA_FAZA1) window.ETERNA_FAZA1(D); /* demo content: new brands, designers, products, icons */
   D.brandOrder = D.brandOrder.filter(function(b){ return D.brands[b]; });
   D.brandOrder.forEach(function(b){ var B = D.brands[b]; B.history = B.history || { en:[], sq:[] }; B.facts = B.facts || []; B.origin = B.origin || {}; B.tag = B.tag || {}; B.intro = B.intro || {}; });
   D.products = D.products.filter(function(p){ return p && p.id && p.n && D.brands[p.b]; });
@@ -137,6 +155,7 @@ function designerProducts(k){ return D.products.filter(function(p){ return desig
 function designerImg(k){
   var d = D.designers[k];
   if (d.portrait) return { src: img("portrait-" + k), bw: 1 };
+  if (d.photo) return { src: img(d.photo), bw: 1 };
   for (var i = 0; i < d.works.length; i++) if (d.works[i][2] && PID[d.works[i][2]]) return { src: img(lifestyle(PID[d.works[i][2]])), bw: 0, pk: 0 };
   var l = designerProducts(k); return { src: l.length ? img(lifestyle(l[0])) : "", bw: 0 };
 }
@@ -154,33 +173,39 @@ function card(p){
   return '<a class="card" href="#product-' + p.id + '"><div class="' + cls + '"><img loading="lazy" decoding="async" src="' + img(a[0]) + '" alt="' + esc(p.n) + '">' + alt + '</div>' +
     '<div class="wl"><span class="n">' + esc(p.n) + '</span><span class="d">' + esc(p.d || typeLabel(p)) + (p.y ? ", " + p.y : "") + '</span><span class="b">' + D.brands[p.b].name + '</span></div></a>';
 }
+/* Structure: PRODUCTS (Furniture, Lighting, Accessories, Outdoor + Brands), ICONS, ROOMS — ETERNA — DESIGNERS, ABOUT US, CONTACT. */
+var MENU_GROUPS = GROUPS.concat(["icons"]);
 function megaProducts(){
   var cols = GROUPS.map(function(g){
-    return '<div class="mcol"><a class="mh" href="#cat-' + g + '">' + t(g) + '</a><ul>' + TAX[g].map(function(s){ return '<li><a href="#cat-' + g + '-' + subKey(g, s) + '">' + t(s) + '</a></li>'; }).join("") + '</ul></div>';
+    return '<div class="mcol"><a class="mh" href="#cat-' + g + '">' + t(g) + '</a><ul>' + TAX[g].map(function(s){ return '<li><a href="#cat-' + g + '-' + subKey(g, s) + '">' + t(s) + '</a></li>'; }).join("") + '<li><a class="va" href="#cat-' + g + '">' + t("viewAll") + '</a></li></ul></div>';
   }).join("");
-  var br = '<div class="mcol mbr"><a class="mh" href="#brands">' + t("brands") + '</a><ul>' + D.brandOrder.map(function(b){ return '<li><a class="mb" href="#brand-' + b + '">' + D.brands[b].name + '</a><a class="msm" href="#brand-' + b + '-collections">' + t("shopCol") + '</a></li>'; }).join("") + '</ul></div>';
+  var br = '<div class="mcol mbr mbr8"><a class="mh" href="#brands">' + t("brands") + '</a><ul>' + D.brandOrder.map(function(b){
+    var has = D.products.some(function(p){ return p.b === b; });
+    return '<li><a class="mb" href="#brand-' + b + '">' + D.brands[b].name + '</a>' + (has ? '<a class="msm" href="#brand-' + b + '-collections">' + t("shopCol") + '</a>' : '') + '</li>';
+  }).join("") + '</ul></div>';
   return '<div class="wrap mgrid mg5">' + cols + br + '</div>';
 }
-function megaRooms(){ return '<div class="wrap mrow">' + ROOMS.map(function(r){ return '<a href="#room-' + r[0] + '">' + t(r[1]) + '</a>'; }).join("") + '</div>'; }
+function megaRooms(){ return '<div class="wrap mrow">' + ROOMS.map(function(r){ return '<a href="#room-' + r[0] + '">' + t(r[1]) + '</a>'; }).join("") + '<a href="#rooms"><b>' + t("viewAll") + '</b></a></div>'; }
 function megaAbout(){ return '<div class="wrap mrow"><a href="#design-services">' + t("ds") + '</a><a href="#philosophy">' + t("ph") + '</a>' + customLinks("menu").map(function(l){ return '<a href="#page-' + esc(l.slug) + '">' + esc(l.label) + '</a>'; }).join("") + '</div>'; }
 function header(over, r){
   function on(k){ return r.sec === k ? " on" : ""; }
   function dd(k, href){ return '<a class="ddt' + on(k) + '" href="#' + href + '" data-dd="' + k + '">' + t(k) + '<i class="car"></i></a>'; }
+  function ln(k, href){ return '<a class="' + on(k).trim() + '" href="#' + href + '">' + t(k) + '</a>'; }
   return '<header class="hdr' + (over ? " over" : "") + '" id="hdr"><div class="wrap in">' +
-    '<nav class="l">' + dd("products","products") + '<a class="' + on("icons").trim() + '" href="#icons">' + t("icons") + '</a>' + dd("rooms","rooms") + '</nav>' +
+    '<nav class="l">' + dd("products","products") + ln("icons","icons") + dd("rooms","rooms") + '</nav>' +
     '<a class="logo mark" href="#home">ETERNA</a>' +
-    '<nav class="r"><span class="hide-m"><a class="' + on("designers").trim() + '" href="#designers">' + t("designers") + '</a>' + dd("about","about") + '<a class="' + on("contact").trim() + '" href="#contact">' + t("contact") + '</a></span>' +
+    '<nav class="r"><span class="hide-m">' + ln("designers","designers") + dd("about","about") + ln("contact","contact") + '</span>' +
     '<span class="lang"><button data-lang="sq" class="' + (lang === "sq" ? "on" : "") + '">AL</button><span>/</span><button data-lang="en" class="' + (lang === "en" ? "on" : "") + '">EN</button></span>' +
     '<button class="burger" id="burger" aria-label="' + t("menu") + '"><span></span></button></nav></div>' +
     '<div class="mega" data-p="products">' + megaProducts() + '</div><div class="mega" data-p="rooms">' + megaRooms() + '</div><div class="mega" data-p="about">' + megaAbout() + '</div></header>';
 }
 function footer(){
   return '<footer><div class="wrap in"><div><div class="logo mark">ETERNA</div><p class="ft">' + esc(SL("footerTagline") || t("footTag")) + '</p></div>' +
-    '<div><h4>' + t("products") + '</h4><ul>' + GROUPS.map(function(g){ return '<li><a href="#cat-' + g + '">' + t(g) + '</a></li>'; }).join("") + '<li><a href="#icons">' + t("icons") + '</a></li><li><a href="#rooms">' + t("rooms") + '</a></li></ul></div>' +
-    '<div><h4>' + t("brands") + '</h4><ul>' + D.brandOrder.map(function(b){ return '<li><a href="#brand-' + b + '">' + D.brands[b].name + '</a></li>'; }).join("") + '<li><a href="#designers">' + t("designers") + '</a></li></ul></div>' +
-    '<div><h4>ETERNA</h4><ul><li><a href="#design-services">' + t("ds") + '</a></li><li><a href="#philosophy">' + t("ph") + '</a></li><li><a href="#contact">' + t("contact") + '</a></li>' + customLinks("footer").map(function(l){ return '<li><a href="#page-' + esc(l.slug) + '">' + esc(l.label) + '</a></li>'; }).join("") +
+    '<div><h4>' + t("products") + '</h4><ul>' + MENU_GROUPS.map(function(g){ return '<li><a href="#' + (g === "icons" ? "icons" : "cat-" + g) + '">' + t(g) + '</a></li>'; }).join("") + '<li><a href="#rooms">' + t("rooms") + '</a></li></ul></div>' +
+    '<div><h4>' + t("brands") + '</h4><ul>' + D.brandOrder.map(function(b){ return '<li><a href="#brand-' + b + '">' + D.brands[b].name + '</a></li>'; }).join("") + '</ul></div>' +
+    '<div><h4>ETERNA</h4><ul><li><a href="#design-services">' + t("dsH") + '</a></li><li><a href="#philosophy">' + t("ph") + '</a></li><li><a href="#designers">' + t("designers") + '</a></li><li><a href="#contact">' + t("contact") + '</a></li>' + customLinks("footer").map(function(l){ return '<li><a href="#page-' + esc(l.slug) + '">' + esc(l.label) + '</a></li>'; }).join("") +
     '<li><a href="' + wa(t("waDef")) + '" target="_blank" rel="noopener">WhatsApp ' + PHONE + '</a></li><li><a href="mailto:' + INFO + '">' + INFO + '</a></li><li><a href="https://instagram.com/' + IG + '" target="_blank" rel="noopener">@' + IG + '</a></li></ul></div></div>' +
-    '<div class="wrap base"><span>© ' + new Date().getFullYear() + ' ETERNA · ' + t("appt") + '</span><span>' + D.brandOrder.map(function(b){ return D.brands[b].name; }).join(" · ") + '</span></div></footer>';
+    '<div class="wrap base"><span>© ' + new Date().getFullYear() + ' ETERNA · ' + t("appt") + '</span><a href="#design-services" style="text-transform:uppercase;letter-spacing:.16em;font-weight:600;opacity:1">' + t("dsH") + '</a><span>' + INFO + '</span></div></footer>';
 }
 function fab(text){ return '<a class="fab" href="' + wa(text || t("waDef")) + '" target="_blank" rel="noopener" aria-label="WhatsApp">' + WAICO + '<span class="t">WhatsApp</span></a>'; }
 function crumbs(list){ return '<div class="crumbs"><a href="#home">' + t("home") + '</a>' + list.map(function(c){ return '<span>/</span>' + (c[1] ? '<a href="#' + c[1] + '">' + esc(c[0]) + '</a>' : '<span>' + esc(c[0]) + '</span>'); }).join("") + '</div>'; }
@@ -209,13 +234,14 @@ function pHome(){
   var groupsTiles = GROUPS.map(function(g){ var l = D.products.filter(function(p){ return inGroup(p, g); }); var c = g === "furniture" ? "egg-2" : g === "outdoor" ? "rivasofa-4" : coverOf(l); return '<a class="room" href="#cat-' + g + '"><img loading="lazy" src="' + img(c) + '" alt=""><span>' + t(g) + '</span></a>'; }).join("");
   return '<section class="hero"><video autoplay muted loop playsinline poster="' + img("hero-poster") + '"><source src="' + vid("hero") + '" type="video/mp4"></video><div class="wrap in"><span class="label">' + t("excl") + '</span><h1>' + t("heroH") + '</h1><div class="row"><p class="lead">' + t("heroP") + '</p><div class="btns"><a class="btn solid" href="#products">' + t("explore") + '</a><a class="btn line" href="#icons">' + t("seeIcons") + '</a></div></div></div></section>' +
     '<section class="sec"><div class="wrap statement"><h2>' + t("stH") + '</h2><div><p>' + esc(((D.philosophy[lang] || D.philosophy.en || [])[1]) || "") + '</p><p style="margin-top:20px"><a class="more" href="#philosophy">' + t("ph") + '</a></p></div></div></section>' +
-    '<section class="sec tight" style="padding-top:0"><div class="wrap"><div class="sec-h"><h2>' + t("threeHouses") + '</h2><a class="more" href="#brands">' + t("brands") + '</a></div><div class="bgrid-3">' + D.brandOrder.map(brandCard).join("") + '</div></div></section>' +
+    '<section class="sec tight" style="padding-top:0"><div class="wrap"><div class="sec-h"><h2>' + t("threeHouses") + '</h2><a class="more" href="#brands">' + t("brands") + '</a></div><div class="bgrid-4">' + D.brandOrder.map(brandCard).join("") + '</div></div></section>' +
     '<section class="sec tight"><div class="wrap"><div class="sec-h"><h2>' + t("iconsH") + '</h2><a class="more" href="#icons">' + t("viewAll") + '</a></div><div class="rail">' + feat.map(card).join("") + '</div></div></section>' +
     '<section class="sec tight"><div class="wrap"><div class="sec-h"><h2>' + t("byCat") + '</h2><a class="more" href="#products">' + t("allProducts") + '</a></div><div class="rooms">' + groupsTiles + '</div></div></section>' +
     '<section class="sec tight"><div class="wrap"><div class="sec-h"><h2>' + t("byRoom") + '</h2><a class="more" href="#rooms">' + t("rooms") + '</a></div><div class="rooms">' + roomTiles() + '</div></div></section>' +
     dsBand();
 }
-function dsBand(){ return '<section class="band sec tight"><div class="wrap in"><div><span class="label muted">' + t("dsK") + '</span><h2 style="margin-top:14px">' + t("dsH") + '</h2></div><div><p>' + t("dsP") + '</p><div class="btns" style="margin-top:24px"><a class="btn solid" href="#design-services">' + t("ds") + '</a></div></div></div></section>'; }
+/* Compact Design Services strip: title | text | button on one row. */
+function dsBand(){ return '<section class="band dsband"><div class="wrap dsb-in"><h2>' + t("dsH") + '</h2><p>' + t("dsP") + '</p><a class="btn solid" href="#design-services">' + t("ds") + '</a></div></section>'; }
 var BHERO = {"fritz-hansen":"egg-2","exteta":"rivasofa-4","cassina":"ca-soriana-2"};
 var BPICS = {"cassina":["ca-prive-2","ca-121-upholstered-3","ca-accordo-2"]};
 function brandHero(b){ if (D.brands[b] && D.brands[b].hero) return D.brands[b].hero; if (BHERO[b]) return BHERO[b]; var p = PID["ca-4-chaise-longue-a-reglage-continu-durable"] || D.products.filter(function(x){ return x.b === b; })[0]; return coverOf(D.products.filter(function(x){ return x.b === b && x.c2 !== "Outdoor" && x.t === "sofas"; })) || lifestyle(p); }
@@ -238,7 +264,7 @@ function pProducts(){
       return '<a class="sub" href="#cat-' + g + '-' + subKey(g, s) + '">' + pic(p0.im[0], t(s)) + '<span class="sn">' + t(s) + '</span><span class="sc">' + l.length + '</span></a>';
     }).join("") + '</div></div>';
   }).join("");
-  return phead([[t("products")]], t("products"), t("productsP")) + '<div class="wrap">' + tiles + '<div class="gblock"><div class="sec-h"><h2>' + t("brands") + '</h2><a class="more" href="#brands">' + t("viewAll") + '</a></div><div class="bgrid-3">' + D.brandOrder.map(brandCard).join("") + '</div></div></div><div class="sec tight"></div>';
+  return phead([[t("products")]], t("products"), t("productsP")) + '<div class="wrap">' + tiles + '<div class="gblock"><div class="sec-h"><h2>' + t("brands") + '</h2><a class="more" href="#brands">' + t("viewAll") + '</a></div><div class="bgrid-4">' + D.brandOrder.map(brandCard).join("") + '</div></div></div><div class="sec tight"></div>';
 }
 function pCat(g, sk){
   if (!TAX[g]) return p404();
@@ -249,7 +275,7 @@ function pCat(g, sk){
   var cr = [[t("products"), "products"], [t(g), s ? "cat-" + g : ""]]; if (s) cr.push([t(s)]);
   return phead(cr, s ? t(s) : t(g), "", s ? t(g) : "") + listing("cat-" + g + "-" + (sk || ""), items, chips, "cat-" + g + (sk ? "-" + sk : ""));
 }
-function pBrands(){ return phead([[t("brands")]], t("brands"), t("brandsP")) + '<div class="wrap"><div class="bgrid-3">' + D.brandOrder.map(brandCard).join("") + '</div></div><div class="sec tight"></div>'; }
+function pBrands(){ return phead([[t("brands")]], t("brands"), t("brandsP")) + '<div class="wrap"><div class="bgrid-4">' + D.brandOrder.map(brandCard).join("") + '</div></div><div class="sec tight"></div>'; }
 function colCards(b){
   return '<div class="cols-grid">' + collections(b).map(function(c){ return '<a class="ccard" href="#col-' + bs(b) + '-' + c.slug + '">' + pic(sortList(c.items)[0].im[0], c.name) + '<span class="cn">' + esc(c.name) + '</span><span class="cc">' + c.items.length + ' ' + (c.items.length === 1 ? t("piece") : t("pieces")) + '</span></a>'; }).join("") + '</div>';
 }
@@ -261,13 +287,17 @@ function pBrand(b, scrollCols){
   if (BPICS[b]) pics = BPICS[b];
   var hist = B.history[lang] || B.history.en;
   var ds = D.designerSets[b].map(dcard).join("");
-  return '<section class="hero bhero"><img class="poster" src="' + img(brandHero(b)) + '" alt=""><div class="wrap in"><span class="label">' + L(B.origin) + '</span><h1>' + B.name + '</h1><div class="row"><p class="lead">' + L(B.tag) + '</p><div class="btns"><a class="btn solid" href="#brand-' + b + '-collections">' + t("shopCol") + '</a><a class="btn line" href="#shop-' + b + '">' + t("allProducts") + '</a></div></div></div></section>' +
+  var waB = wa(t("brandWa").replace("{b}", B.name));
+  var btns = items.length ? '<a class="btn solid" href="#brand-' + b + '-collections">' + t("shopCol") + '</a><a class="btn line" href="#shop-' + b + '">' + t("allProducts") + '</a>' : '<a class="btn solid" target="_blank" rel="noopener" href="' + waB + '">' + WAICO + t("brandCta").replace("{b}", B.name) + '</a>';
+  var cta = '<section class="band sec tight"><div class="wrap in"><h2>' + t("brandCta").replace("{b}", B.name) + '</h2><div><p>' + (B.project ? t("projectNote") : t("brandCtaP").replace(/\{b\}/g, B.name)) + '</p><div class="btns" style="margin-top:24px"><a class="btn solid" target="_blank" rel="noopener" href="' + waB + '">' + WAICO + 'WhatsApp</a><a class="btn line" href="#contact">' + t("contact") + '</a></div></div></div></section>';
+  return '<section class="hero bhero"><img class="poster" src="' + img(brandHero(b)) + '" alt=""><div class="wrap in"><span class="label">' + L(B.origin) + '</span><h1>' + B.name + '</h1><div class="row"><p class="lead">' + L(B.tag) + '</p><div class="btns">' + btns + '</div></div></div></section>' +
     '<section class="sec"><div class="wrap bstory"><div class="bs-t"><span class="label muted">' + t("readStory") + '</span><p class="ph-open">' + esc(L(B.intro)) + '</p>' + hist.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join("") + '</div>' +
     '<div class="bs-p">' + pics.slice(0, 2).map(function(k){ return '<div class="pic"><img loading="lazy" src="' + img(k) + '" alt=""></div>'; }).join("") + '</div></div></section>' +
-    '<section class="wrap"><div class="pillars">' + B.facts.map(function(f){ return '<div class="pillar"><h3>' + f[0] + '</h3><p>' + L(f[1]) + '</p></div>'; }).join("") + '</div></section>' +
+    (B.facts.length ? '<section class="wrap"><div class="pillars">' + B.facts.map(function(f){ return '<div class="pillar"><h3>' + f[0] + '</h3><p>' + L(f[1]) + '</p></div>'; }).join("") + '</div></section>' : '') +
     (pics[2] ? '<section class="sec tight"><div class="wrap"><div class="wide"><img loading="lazy" src="' + img(pics[2]) + '" alt=""></div></div></section>' : '<div class="sec tight"></div>') +
-    '<section class="sec tight" id="collections" style="padding-top:0"><div class="wrap"><div class="sec-h"><h2>' + t("shopCol") + '</h2><a class="more" href="#shop-' + b + '">' + t("allProducts") + ' · ' + items.length + '</a></div>' + colCards(b) + '</div></section>' +
-    '<section class="sec tight"><div class="wrap"><div class="sec-h"><h2>' + t("designers") + '</h2><a class="more" href="#designers">' + t("viewAll") + '</a></div><div class="dlist">' + ds + '</div></div></section>';
+    (items.length ? '<section class="sec tight" id="collections" style="padding-top:0"><div class="wrap"><div class="sec-h"><h2>' + t("shopCol") + '</h2><a class="more" href="#shop-' + b + '">' + t("allProducts") + ' · ' + items.length + '</a></div>' + colCards(b) + '</div></section>' : '') +
+    (ds ? '<section class="sec tight"><div class="wrap"><div class="sec-h"><h2>' + t("designers") + '</h2><a class="more" href="#designers">' + t("viewAll") + '</a></div><div class="dlist">' + ds + '</div></div></section>' : '') +
+    (B.project || !items.length ? cta : '');
 }
 function pShop(b){ var B = D.brands[b]; if (!B) return p404(); return phead([[t("brands"), "brands"], [B.name, "brand-" + b], [t("allProducts")]], B.name, "", t("allProducts")) + listing("shop-" + b, D.products.filter(function(p){ return p.b === b; }), collections(b).map(function(c){ return [c.name, "col-" + bs(b) + "-" + c.slug]; }), ""); }
 function pCol(bs, sl){
@@ -284,7 +314,7 @@ function pRoom(k){
 }
 function pIcons(){
   var spans = ["w2 h2","","h2","","w2","","","h2","w2","","","w2 h2","","h2","","","w2","","",""];
-  var col = D.icons.map(function(ic, i){ var p = PID[ic.p]; return '<button class="ctile ' + spans[i] + '" data-icon="' + i + '"><img loading="' + (i < 6 ? "eager" : "lazy") + '" src="' + img(lifestyle(p)) + '" alt="' + esc(ic.t) + '"><span><b>' + esc(ic.t) + '</b><i>' + D.brands[p.b].name + '</i></span></button>'; }).join("");
+  var col = D.icons.map(function(ic, i){ var p = PID[ic.p]; return '<button class="ctile ' + spans[i % spans.length] + '" data-icon="' + i + '"><img loading="' + (i < 6 ? "eager" : "lazy") + '" src="' + img(lifestyle(p)) + '" alt="' + esc(ic.t) + '"><span><b>' + esc(ic.t) + '</b><i>' + D.brands[p.b].name + '</i></span></button>'; }).join("");
   var ctas = ["available","orderNow","quote"], waT = ["waAvail","waOrder","waProd"];
   var stories = D.icons.map(function(ic, i){
     var p = PID[ic.p], im = p.im[0];
@@ -296,11 +326,16 @@ function pIcons(){
 }
 function dcard(k){
   var d = D.designers[k], im = designerImg(k), n = designerProducts(k).length;
-  return '<a class="card dcard" href="#designer-' + k + '"><div class="pic' + (im.bw ? " bw" : "") + '"><img loading="lazy" src="' + im.src + '" alt="' + esc(d.name) + '"></div><div class="wl"><span class="n">' + esc(d.short || d.name) + '</span><span class="d">' + esc(d.life) + ' · ' + L(d.country) + '</span><span class="w">' + (n ? n + ' ' + t("pieces") : (D.brands[d.brand] ? D.brands[d.brand].name : "")) + '</span></div></a>';
+  return '<a class="card dcard" href="#designer-' + k + '"><div class="pic' + (im.bw ? " bw" : "") + '"><img loading="lazy" src="' + im.src + '" alt="' + esc(d.name) + '"></div><div class="wl"><span class="n">' + esc(d.short || d.name) + '</span><span class="d">' + esc(d.life) + ' · ' + L(d.country) + '</span><span class="w">' + (D.brands[d.brand] ? D.brands[d.brand].name : "") + (n ? ' · ' + n + ' ' + t("pieces") : "") + '</span></div></a>';
 }
+/* Designers A-Z (FAZA 1): one alphabetical list with letter headings and a brand filter. */
+var DZ = { brand:"" };
 function pDesigners(){
-  return phead([[t("designers")]], t("designersH"), t("designersP")) + '<div class="wrap">' + D.brandOrder.map(function(b){
-    return '<div class="gblock"><div class="sec-h"><h2>' + D.brands[b].name + '</h2><a class="more" href="#brand-' + b + '">' + L(D.brands[b].origin) + '</a></div><div class="dlist">' + D.designerSets[b].map(dcard).join("") + '</div></div>';
+  var keys = Object.keys(D.designers).filter(function(k){ var d = D.designers[k]; return D.brands[d.brand] && (!DZ.brand || d.brand === DZ.brand); });
+  keys.sort(function(a, b){ return (D.designers[a].short || D.designers[a].name).localeCompare(D.designers[b].short || D.designers[b].name); });
+  /* grouped by house (as before), A-Z inside each house */
+  return phead([[t("designers")]], t("designersH"), t("designersP")) + '<div class="wrap">' + D.brandOrder.filter(function(b){ return keys.some(function(k){ return D.designers[k].brand === b; }); }).map(function(b){
+    return '<div class="gblock"><div class="sec-h"><h2>' + D.brands[b].name + '</h2><a class="more" href="#brand-' + b + '">' + L(D.brands[b].origin) + '</a></div><div class="dlist">' + keys.filter(function(k){ return D.designers[k].brand === b; }).map(dcard).join("") + '</div></div>';
   }).join("") + '</div><div class="sec tight"></div>';
 }
 function pDesigner(k){
@@ -314,13 +349,18 @@ function pAbout(){
   function c(h, k, p, i){ return '<a class="bcard" href="#' + h + '"><img loading="lazy" src="' + img(i) + '" alt=""><div class="t"><span class="label">ETERNA</span><h3>' + t(k) + '</h3><p>' + p + '</p></div></a>'; }
   return phead([[t("about")]], t("about"), t("aboutP")) + '<div class="wrap"><div class="split">' + c("design-services", "ds", t("dsP"), "rivasofa-2") + c("philosophy", "ph", esc(((D.philosophy[lang] || D.philosophy.en || [])[0]) || ""), "egg-3") + '</div></div><div class="sec tight"></div>';
 }
+/* Complimentary Design Services, content from Eterna_Design_Services_Page.pdf (FAZA 1). */
 function pDS(){
-  var steps = T.dsS.map(function(s, i){ return '<div class="pillar"><span class="label bz">0' + (i + 1) + '</span><h3>' + s[lang === "sq" ? 1 : 0] + '</h3><p>' + T.dsSt[i][lang === "sq" ? 1 : 0] + '</p></div>'; }).join("");
-  return '<section class="ph-hero"><div class="wrap">' + crumbs([[t("about"), "about"], [t("ds")]]) + '<span class="label">' + t("dsK") + '</span><h1 style="max-width:16ch">' + t("dsH") + '</h1><p>' + t("dsP") + '</p><div class="btns" style="margin-top:32px"><a class="btn solid" target="_blank" rel="noopener" href="' + wa(t("dsWa")) + '">' + WAICO + t("dsCta") + '</a></div></div></section>' +
-    '<section class="sec"><div class="wrap cols"><p class="ph-open">' + t("dsBody1") + '</p><div><p>' + t("dsBody2") + '</p></div></div></section>' +
-    '<section class="wrap"><div class="pillars">' + steps + '</div></section>' +
-    '<section class="sec tight"><div class="wrap"><div class="wide"><img loading="lazy" src="' + img("rivasofa-4") + '" alt=""></div></div></section>' +
-    '<section class="band sec tight"><div class="wrap in"><h2>' + t("dsCta") + '</h2><div><p>' + T.dsSt[1][lang === "sq" ? 1 : 0] + '</p><div class="btns" style="margin-top:24px"><a class="btn solid" target="_blank" rel="noopener" href="' + wa(t("dsWa")) + '">' + WAICO + 'WhatsApp</a><a class="btn line" href="#contact">' + t("contact") + '</a></div></div></div></section>';
+  var q = lang === "sq" ? 1 : 0, book = wa(t("dsBookWa"));
+  var steps = T.dsSteps.map(function(s, i){ return '<div class="pillar"><span class="label bz">0' + (i + 1) + '</span><h3>' + s[q] + '</h3><p>' + s[q + 2] + '</p></div>'; }).join("");
+  var spaces = T.dsSpaces.map(function(s){ return '<div class="pillar"><h3>' + s[q] + '</h3><p>' + s[q + 2] + '</p></div>'; }).join("");
+  return '<section class="ph-hero"><div class="wrap">' + crumbs([[t("about"), "about"], [t("ds")]]) + '<span class="label">' + t("dsH") + '</span><h1 style="max-width:18ch">' + t("dsHero") + '</h1><p>' + t("dsSub") + '</p><div class="btns" style="margin-top:32px"><a class="btn solid" target="_blank" rel="noopener" href="' + book + '">' + WAICO + t("dsBook") + '</a></div></div></section>' +
+    '<section class="sec tight"><div class="wrap"><div class="dsg">' + ["ds-1","ds-2","ds-3"].map(function(n){ return '<img loading="lazy" src="' + img("/faza1/" + n + ".jpg") + '" alt="">'; }).join("") + '</div></div></section>' +
+    '<section class="sec"><div class="wrap cols"><div><span class="label muted">' + t("dsAppH") + '</span><p class="ph-open" style="margin-top:14px">' + t("dsApp1") + '</p></div><div><p>' + t("dsApp2") + '</p></div></div></section>' +
+    '<section class="wrap"><div class="sec-h"><h2>' + t("dsHowH") + '</h2></div><div class="pillars">' + steps + '</div></section>' +
+    '<section class="sec"><div class="wrap cols"><h2>' + t("dsRecvH") + '</h2><ul class="dslist">' + T.dsRecv.map(function(x){ return '<li>' + x[q] + '</li>'; }).join("") + '</ul></div></section>' +
+    '<section class="wrap"><div class="sec-h"><h2>' + t("dsSpaceH") + '</h2></div><div class="pillars">' + spaces + '</div></section><div class="sec tight"></div>' +
+    '<section class="band sec tight"><div class="wrap in"><h2>' + t("dsEndH") + '</h2><div><p>' + t("dsEndP") + '</p><div class="btns" style="margin-top:24px"><a class="btn solid" target="_blank" rel="noopener" href="' + book + '">' + t("dsBook2") + '</a><a class="btn line" target="_blank" rel="noopener" href="' + wa(t("dsWa")) + '">' + WAICO + t("dsWaBtn") + '</a></div><p style="margin-top:18px;font-size:var(--fs-s);opacity:.8">' + PHONE + ' · ' + INFO + ' · ' + t("apptOnly") + '</p></div></div></section>';
 }
 function pPhilosophy(){
   var tx = (D.philosophy[lang] && D.philosophy[lang].length ? D.philosophy[lang] : D.philosophy.en) || [], ti = (D.phTitles[lang] && D.phTitles[lang].length ? D.phTitles[lang] : D.phTitles.en) || [], ims = (D.phImages && D.phImages.length) ? D.phImages : ["egg-2","pk22-2","swan-2","locus-2","rivasofa-3","pk80-1","s7-2"];
@@ -332,9 +372,13 @@ function pPhilosophy(){
   return '<section class="ph-hero"><div class="wrap">' + crumbs([[t("about"), "about"], [t("ph")]]) + '<span class="label">' + t("phK") + '</span><h1>' + t("phH") + '</h1><p>' + esc(tx[0] || "") + '</p></div></section><section class="wrap istories">' + ch + '</section><section class="wrap"><div class="sign"><span class="mark">ETERNA</span></div></section><div class="sec tight"></div>';
 }
 function pContact(){
-  function row(l, v, h){ return '<li><b>' + l + '</b><span class="contact-big">' + (h ? '<a href="' + h + '" target="_blank" rel="noopener">' + v + '</a>' : v) + '</span></li>'; }
-  return phead([[t("contact")]], t("contactH"), t("contactP")) + '<div class="wrap cols"><ul class="list">' + row("WhatsApp", PHONE, wa(t("waDef"))) + row(t("phone"), PHONE, "tel:" + PHONE.replace(/ /g, "")) + row(t("email"), INFO, "mailto:" + INFO) + row("Instagram", "@" + IG, "https://instagram.com/" + IG) + row(t("showroom"), t("appt")) + '</ul>' +
-    '<form class="form" id="cform"><div class="fld"><label for="fn">' + t("name") + '</label><input id="fn" name="n" autocomplete="name"></div><div class="fld"><label for="fi">' + t("interest") + '</label><select id="fi" name="i"><option>' + t("products") + '</option><option>' + t("ds") + '</option><option>Fritz Hansen</option><option>Cassina</option><option>Exteta</option></select></div><div class="fld"><label for="fm">' + t("msg") + '</label><textarea id="fm" name="m"></textarea></div><div class="btns"><button class="btn dark" type="submit" data-via="wa">' + WAICO + t("sendWa") + '</button><button class="btn line" type="submit" data-via="mail">' + t("sendMail") + '</button></div><p class="muted" style="font-size:var(--fs-s)">' + PHONE + ' · ' + INFO + '</p></form></div><div class="sec tight"></div>';
+  /* Contact: compact header, details card on the left, form card on the right. */
+  function row(l, v, h){ return '<li><span class="ck">' + l + '</span><span class="cv">' + (h ? '<a href="' + h + '"' + (h.indexOf("http") === 0 ? ' target="_blank" rel="noopener"' : '') + '>' + v + '</a>' : v) + '</span></li>'; }
+  return '<div class="wrap ct">' + crumbs([[t("contact")]]) +
+    '<div class="ct-head"><span class="label bz">' + t("contact") + '</span><h1>' + t("contactH") + '</h1><p>' + t("contactP") + '</p></div>' +
+    '<div class="ct-grid"><aside class="ct-info"><ul>' + row("WhatsApp", PHONE, wa(t("waDef"))) + row(t("phone"), PHONE, "tel:" + PHONE.replace(/ /g, "")) + row(t("email"), INFO, "mailto:" + INFO) + row("Instagram", "@" + IG, "https://instagram.com/" + IG) + row(t("showroom"), t("appt")) + '</ul>' +
+    '<a class="btn dark ct-wa" target="_blank" rel="noopener" href="' + wa(t("waDef")) + '">' + WAICO + 'WhatsApp</a></aside>' +
+    '<form class="ct-form" id="cform"><div class="ct-two"><div class="fld"><label for="fn">' + t("name") + '</label><input id="fn" name="n" autocomplete="name"></div><div class="fld"><label for="fi">' + t("interest") + '</label><select id="fi" name="i"><option>' + t("products") + '</option><option>' + t("ds") + '</option>' + D.brandOrder.map(function(b){ return "<option>" + D.brands[b].name + "</option>"; }).join("") + '</select></div></div><div class="fld"><label for="fm">' + t("msg") + '</label><textarea id="fm" name="m"></textarea></div><div class="btns"><button class="btn dark" type="submit" data-via="wa">' + WAICO + t("sendWa") + '</button><button class="btn line" type="submit" data-via="mail">' + t("sendMail") + '</button></div></form></div></div><div class="sec tight"></div>';
 }
 function pProduct(id){
   var p = PID[id]; if (!p) return p404();
@@ -390,7 +434,7 @@ function route(){
   if ((m = h.match(/^(?:page-|\/page\/)(.+)$/))) return { page:"custom", a:m[1], sec:"about" };
   return { page:"404", sec:"" };
 }
-var app = document.getElementById("app"), lastHash = null;
+var app = document.getElementById("app"), lastHash = null, GOICON = -1;
 function render(keepScroll){
   var r = route(), over = false, body, title = "ETERNA · Timeless Design", fabText = "";
   switch (r.page) {
@@ -424,6 +468,7 @@ function render(keepScroll){
   if (!keepScroll) {
     if (r.page === "brand" && r.cols) { var c = document.getElementById("collections"); if (c) { c.scrollIntoView(); window.scrollBy(0, -70); return; } }
     window.scrollTo(0, 0);
+    if (r.page === "icons" && GOICON > -1) { var ie = document.getElementById("icon" + GOICON); GOICON = -1; if (ie) window.scrollTo(0, ie.getBoundingClientRect().top + window.scrollY - 90); }
   }
 }
 function bind(r, over){
@@ -438,6 +483,8 @@ function bind(r, over){
   document.getElementById("burger").addEventListener("click", openMenu);
   document.querySelectorAll("[data-brand]").forEach(function(b){ b.addEventListener("click", function(){ LS.brand = b.getAttribute("data-brand"); LS.n = 36; render(true); }); });
   var more = document.getElementById("more"); if (more) more.addEventListener("click", function(){ LS.n += 36; var y = window.scrollY; render(true); window.scrollTo(0, y); });
+  document.querySelectorAll("[data-dzb]").forEach(function(b){ b.addEventListener("click", function(){ DZ.brand = b.getAttribute("data-dzb"); render(true); }); });
+  document.querySelectorAll("[data-goicon]").forEach(function(a){ a.addEventListener("click", function(){ GOICON = +a.getAttribute("data-goicon"); if (location.hash === "#icons") { render(false); } }); });
   document.querySelectorAll("[data-icon]").forEach(function(b){ b.addEventListener("click", function(){ var e = document.getElementById("icon" + b.getAttribute("data-icon")); if (e) { var y = e.getBoundingClientRect().top + window.scrollY - 90; window.scrollTo({ top:y, behavior:"smooth" }); } }); });
   if (r.page === "product" && PID[r.a]) bindGallery(PID[r.a]);
   var f = document.getElementById("cform");
@@ -458,10 +505,13 @@ function bindGallery(p){
 function openMenu(){
   var m = document.createElement("div"); m.className = "menu";
   function acc(title, inner, href){ return '<details class="macc"><summary class="big">' + title + '</summary><div class="msubs">' + inner + '</div></details>'; }
-  var prod = GROUPS.map(function(g){ return '<div class="msub"><a href="#cat-' + g + '"><b>' + t(g) + '</b></a>' + TAX[g].map(function(s){ return '<a href="#cat-' + g + '-' + subKey(g, s) + '">' + t(s) + '</a>'; }).join("") + '</div>'; }).join("") +
-    '<div class="msub"><a href="#brands"><b>' + t("brands") + '</b></a>' + D.brandOrder.map(function(b){ return '<a href="#brand-' + b + '">' + D.brands[b].name + '</a>'; }).join("") + '</div>';
+  var prod = MENU_GROUPS.map(function(g){
+    if (g === "icons") return "";
+    return '<div class="msub"><a href="#cat-' + g + '"><b>' + t(g) + '</b></a>' + TAX[g].map(function(s){ return '<a href="#cat-' + g + '-' + subKey(g, s) + '">' + t(s) + '</a>'; }).join("") + '<a href="#cat-' + g + '">' + t("viewAll") + '</a></div>';
+  }).join("");
+  var brs = '<div class="msub"><a href="#brands"><b>' + t("brands") + '</b></a>' + D.brandOrder.map(function(b){ return '<a href="#brand-' + b + '">' + D.brands[b].name + '</a>'; }).join("") + '</div>';
   m.innerHTML = '<div class="top"><span class="mark">ETERNA</span><button class="label" id="mx">' + t("close") + '</button></div>' +
-    acc(t("products"), '<div class="msub"><a href="#products"><b>' + t("allProducts") + '</b></a></div>' + prod) + '<a class="big" href="#icons">' + t("icons") + '</a>' +
+    acc(t("products"), '<div class="msub"><a href="#products"><b>' + t("allProducts") + '</b></a></div>' + prod + brs) + '<a class="big" href="#icons">' + t("icons") + '</a>' +
     acc(t("rooms"), '<div class="msub"><a href="#rooms"><b>' + t("viewAll") + '</b></a></div>' + '<div class="msub">' + ROOMS.slice(0, 4).map(function(r){ return '<a href="#room-' + r[0] + '">' + t(r[1]) + '</a>'; }).join("") + '</div><div class="msub">' + ROOMS.slice(4).map(function(r){ return '<a href="#room-' + r[0] + '">' + t(r[1]) + '</a>'; }).join("") + '</div>') +
     '<a class="big" href="#designers">' + t("designers") + '</a>' + acc(t("about"), '<div class="msub"><a href="#design-services"><b>' + t("ds") + '</b></a><a href="#philosophy"><b>' + t("ph") + '</b></a>' + customLinks("menu").map(function(l){ return '<a href="#page-' + esc(l.slug) + '"><b>' + esc(l.label) + '</b></a>'; }).join("") + '</div>') + '<a class="big" href="#contact">' + t("contact") + '</a>' +
     '<div class="foot"><a href="' + wa(t("waDef")) + '" target="_blank" rel="noopener">WhatsApp ' + PHONE + '</a><span>' + INFO + '</span><span>' + t("appt") + '</span></div>';

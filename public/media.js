@@ -27,6 +27,7 @@
     if (/^(data|blob):/i.test(s)) return s;
     if (s.indexOf("//") === 0) s = "https:" + s;
     if (FULL_LINK.test(s)) return optimizeCloudinary(s, opts && opts.w);
+    if (s.charAt(0) === "/") return s; /* local file served from /public (e.g. /faza1/...) */
     var key = s.replace(/^(img|video)\//, "");
     var isVideo = (opts && opts.type === "video") || s.indexOf("video/") === 0 || VIDEO_EXT.test(key);
     if (!HAS_EXT.test(key)) key += isVideo ? ".mp4" : ".webp";

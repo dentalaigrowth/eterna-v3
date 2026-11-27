@@ -75,3 +75,12 @@ export function settingsOverrides(values) {
   }
   return out;
 }
+
+/* Products on the site, per brand. The "settings" row may hold productBrandsOff: a list
+   of brand ids whose products are hidden on the public site (data stays in the database).
+   Absent = the default below, so only Fritz Hansen and Exteta show products. */
+export const PRODUCT_BRANDS_OFF_DEFAULT = ["cassina", "knoll", "vitra", "flos", "fiam", "amura"];
+export function productBrandsOff(saved) {
+  const v = saved && saved.productBrandsOff;
+  return Array.isArray(v) ? v.filter((x) => typeof x === "string") : PRODUCT_BRANDS_OFF_DEFAULT.slice();
+}

@@ -14,13 +14,14 @@
    admin dashboard (site_content.catalog_version = "v3"). Before that the site
    keeps showing the static data.js, so it never shows the old 63-product shape. */
 import { supabase } from "./public-supabase.js";
-import { mergeSiteSettings } from "./site-settings.js";
+import { mergeSiteSettings, productBrandsOff } from "./site-settings.js";
 
 const CACHE_KEY = "eterna-db-cache-v3";
 const HOLD_MS = 3000;
 const PAGE = 1000;
 
 window.ETERNA_SETTINGS = mergeSiteSettings(null);
+window.ETERNA_SETTINGS.productBrandsOff = productBrandsOff(null);
 
 let defaultT = null;
 let released = false;
@@ -105,6 +106,8 @@ function applyDbData(data) {
   const sc = data.site_content || {};
   window.ETERNA_CONTENT = sc;
   window.ETERNA_SETTINGS = mergeSiteSettings(sc.settings);
+  /* brands whose products are switched off from the admin (Cilësimet > Produktet në faqe) */
+  window.ETERNA_SETTINGS.productBrandsOff = productBrandsOff(sc.settings);
   if (!data.v3) return;
 
   const D = window.ETERNA;

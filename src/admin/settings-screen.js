@@ -3,12 +3,20 @@
 
 import { supabase } from "./supabase.js";
 import { ADMIN_EMAIL_DOMAIN } from "./config.js";
-import { el, biText, textInput, imageInput, fieldCard, langSwitch, collectFields } from "./fields.js";
+import { el, biText, textInput, imageInput, fieldCard, langSwitch, collectFields, toggle } from "./fields.js";
 import {
   SITE_SETTINGS_DEFAULTS,
   mergeSiteSettings,
   settingsOverrides,
+  productBrandsOff,
 } from "../site-settings.js";
+
+/* All houses shown on the site (the last five live in public/faza1.js until imported). */
+const ALL_BRANDS = [
+  ["fritz-hansen", "Fritz Hansen"], ["cassina", "Cassina"], ["knoll", "Knoll"], ["vitra", "Vitra"],
+  ["flos", "Flos"], ["exteta", "Exteta"], ["fiam", "Fiam"], ["amura", "Amura"],
+];
+const PB = "pb__";
 
 const KEY = "settings";
 const REQUIRED_MSG = "Ky fushë është e detyrueshme";
@@ -73,7 +81,7 @@ function adminLoginCard() {
   return details;
 }
 
-async function persistSettings(values) {
+async function persistSettings(values, brandsOff) {
   const { data: current, error: readError } = await supabase
     .from("site_content")
     .select("value")
@@ -83,6 +91,7 @@ async function persistSettings(values) {
   const value = { ...((current && current.value) || {}) };
   for (const key of Object.keys(SITE_SETTINGS_DEFAULTS)) delete value[key];
   Object.assign(value, settingsOverrides(values));
+  value.productBrandsOff = brandsOff;
   const { error: saveError } = await supabase
     .from("site_content")
     .upsert({ key: KEY, value }, { onConflict: "key" });
@@ -97,6 +106,10 @@ export async function renderSettingsForm(main, notice) {
     .maybeSingle();
   if (error) throw error;
   const s = mergeSiteSettings(data && data.value);
+  const off = productBrandsOff(data && data.value);
+  const { data: brandRows } = await supabase.from("brands").select("id, data").order("sort_order");
+  const brands = ALL_BRANDS.slice();
+  for (const r of brandRows || []) if (!brands.some((b) => b[0] === r.id)) brands.push([r.id, (r.data && r.data.name) || r.id]);
   main.innerHTML = "";
 
   // V3 site uses: phone, WhatsApp, info email, Instagram, footer slogan and SEO.
@@ -117,6 +130,13 @@ export async function renderSettingsForm(main, notice) {
     withReset(biText("Titulli i sajtit", s.seoTitle, { key: "seoTitle" }), "seoTitle"),
     withReset(biText("Përshkrimi", s.seoDescription, { key: "seoDescription", long: true }), "seoDescription"),
     withReset(imageInput("Imazhi i ndarjes (URL)", s.seoImage, { key: "seoImage" }), "seoImage")
+  );
+  const help = el("p", "muted");
+  help.textContent = "Ndiz ose fik produktet e çdo marke në faqe. Kur fiket, marka mbetet me faqen e saj, por produktet e saj nuk shfaqen. Asgjë nuk fshihet: kur e ndez përsëri, produktet kthehen.";
+  const prodBrands = fieldCard(
+    "Produktet në faqe",
+    help,
+    ...brands.map(([id, name]) => toggle(name, off.indexOf(id) < 0, { key: PB + id }))
   );
   const legacy = el("div");
   legacy.hidden = true;
@@ -158,11 +178,13 @@ export async function renderSettingsForm(main, notice) {
   const colSide = el("div", "form-col-side");
   layout.append(colMain, colSide);
   colMain.append(contact, footer, legacy);
-  colSide.append(seo);
+  colSide.append(prodBrands, seo);
   main.append(topBar, toast, langSwitch(), layout, adminLoginCard());
 
   async function save(resetKey) {
     const values = { ...collectFields(layout) };
+    const brandsOff = brands.filter(([id]) => !values[PB + id]).map(([id]) => id);
+    for (const [id] of brands) delete values[PB + id];
     values.instagram = instagramHandle(values.instagram);
     if (resetKey) values[resetKey] = SITE_SETTINGS_DEFAULTS[resetKey];
     const errors = validate(values);
@@ -173,7 +195,7 @@ export async function renderSettingsForm(main, notice) {
     saveBtn.disabled = true;
     saveBtn.textContent = "Po ruan…";
     try {
-      await persistSettings(values);
+      await persistSettings(values, brandsOff);
       renderSettingsForm(main, "Ndryshimet u ruajtën");
     } catch (e) {
       alert("Gabim: " + e.message);

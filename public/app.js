@@ -101,7 +101,9 @@ function prep(){
   if (window.ETERNA_FAZA1) window.ETERNA_FAZA1(D); /* demo content: new brands, designers, products, icons */
   D.brandOrder = D.brandOrder.filter(function(b){ return D.brands[b]; });
   D.brandOrder.forEach(function(b){ var B = D.brands[b]; B.history = B.history || { en:[], sq:[] }; B.facts = B.facts || []; B.origin = B.origin || {}; B.tag = B.tag || {}; B.intro = B.intro || {}; });
-  D.products = D.products.filter(function(p){ return p && p.id && p.n && D.brands[p.b]; });
+  /* Brands switched off in the admin (Cilësimet > Produktet në faqe): the brand stays, its products are hidden. */
+  var off = (window.ETERNA_SETTINGS && window.ETERNA_SETTINGS.productBrandsOff) || [];
+  D.products = D.products.filter(function(p){ return p && p.id && p.n && D.brands[p.b] && off.indexOf(p.b) < 0; });
   D.products.forEach(function(p){ if (!Array.isArray(p.im) || !p.im.length) p.im = [["", 1]]; });
   PID = {}; D.products.forEach(function(p){ PID[p.id] = p; });
   D.designerSets = {}; D.brandOrder.forEach(function(b){ D.designerSets[b] = []; });
